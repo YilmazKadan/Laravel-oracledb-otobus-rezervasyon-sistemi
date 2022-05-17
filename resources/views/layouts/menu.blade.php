@@ -22,9 +22,13 @@
     </a>
 
     @if(auth()->user()->yetki >= 2)
-    <a href="{{route("rezervasyon.index")}}" class="nav-link {{ Request::is('yetkilendirme') ? 'active' : '' }}">
+    <a href="{{route("yetkiliste")}}" class="nav-link {{ Route::is('yetkiliste') ? 'active' : '' }}">
         <i class="nav-icon fas fa-home"></i>
         <p>Yetkilendirme</p>
     </a>
+     <a href="{{route("user.index")}}" class="nav-link {{ Route::is('user.index') ? 'active' : '' }}">
+            <i class="nav-icon fas fa-home"></i>
+            <p>User İşlemleri</p>
+     </a>
     @endif
 </li>

@@ -17,7 +17,7 @@ use App\Models\Otobus;
 
 Route::get('/', function () {
 
-    return view("welcome");
+    return view("auth.login");
 });
 Route::group(["middleware" => ['auth']],function(){
         Route::resource("rezervasyon"  ,"RezervasyonController");
@@ -28,5 +28,12 @@ Route::group(["middleware" => ['auth']],function(){
         ]);
         Route::get("/otobus/{id}/koltuk","OtobusController@musaitkoltuk")->name("otobus.koltuk");
         Route::get("/seferotobuscek/{id}","OtobusController@seferotobuscek");
+
+        Route::middleware("admin")->group(function(){
+            Route::resource("user","UserController");
+
+            Route::get("yetkiliste","UserController@yetkiUserListe")->name("yetkiliste");
+            Route::put("yetkiguncelle/{kullanici}","UserController@yetkiGuncelle")->name("yetki.update");
+        });
 });
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware("auth");
