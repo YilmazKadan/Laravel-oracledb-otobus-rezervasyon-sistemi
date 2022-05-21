@@ -25,6 +25,7 @@
                         <th>Otobüs Plakası:</th>
                         <th>Koltuk Numarası:</th>
                         <th>Üye Ad Soyad:</th>
+                        <th>Güzergah:</th>
                         <th>Kalkis Tarihi:</th>
                         <th>Üyelik Tarihi:</th>
                         <th>İşlemler:</th>
@@ -37,6 +38,7 @@
                             <td>{{$rezervasyon->koltuk->otobus->plaka}}</td>
                             <td>{{$rezervasyon->koltuk->numara}}</td>
                             <td>{{$rezervasyon->user->ad}}</td>
+                            <td>{{$rezervasyon->sefer->guzergah->nereden."-".$rezervasyon->sefer->guzergah->nereye}}</td>
                             <td>{{$rezervasyon->sefer->kalkis_tarihi}}</td>
                             <td>{{$rezervasyon->created_at}}</td>
                             <td class="d-flex justify-content-spacebetween">

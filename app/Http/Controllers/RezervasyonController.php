@@ -64,6 +64,9 @@ class RezervasyonController extends Controller
         try {
 //          Koltuk doluluk kontrol
             $koltuk = Koltuk::findOrFail($request->koltuk_id);
+
+            if($koltuk->dolu_durum !=false)
+                 return redirect()->route("rezervasyon.create")->with("error","Hile yapma çakal !");
             $koltuk->dolu_durum = true;
             $koltuk->save();
 
