@@ -9,7 +9,7 @@ Proje içerisinde AdminLTE3 admin panel tasarımı kullanılmıştır.
 Laravel'de OracleDB işlemlerini daha rahat yapabilmek için **yajra/laravel-oci8** paketi kullanılmıştır.
 
 ## Proje kurulumu 
-
+Projeyi elde ettiken sonra `composer install" komutu ile tüm bağımlılıkları yüklüyoruz.
 Proje kurulumu için sisteminizde OracleDB kurulu olması gerekmekte.
 `php artisan key:generate` komutu ile uygulama anahtarı oluşturulmalıdır.
 Bu anahtar session ve diğer şifrelenmiş verilerin güvenliğinde kullanılacaktır.
