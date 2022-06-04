@@ -11,7 +11,11 @@ Laravel'de OracleDB işlemlerini daha rahat yapabilmek için **yajra/laravel-oci
 ## Proje kurulumu 
 
 Proje kurulumu için sisteminizde OracleDB kurulu olması gerekmekte.
+`php artisan key:generate` komutu ile uygulama anahtarı oluşturulmalıdır.
+Bu anahtar session ve diğer şifrelenmiş verilerin güvenliğinde kullanılacaktır.
+key oluştuktan sonra .env dosyanız oluşacaktır.
 .env dosyanıza veritabanı ayarlamasını aşağıdaki gibi yapmanız gerekiyor.
+
 <pre>
 DB_CONNECTION=oracle
 DB_HOST=localhost
@@ -20,6 +24,7 @@ DB_SERVICE_NAME=servis adınız
 DB_USERNAME=OracleDb kullanıcı adı
 DB_PASSWORD=db şifreniz
 </pre>
+Ardından 
 Bu işlemlerden sonra migration dosyalarını veritabanına geçirmek için 
 <pre> php artisan migrate --seed
 </pre> komutunu konsola yazıyoruz.
